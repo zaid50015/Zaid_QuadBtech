@@ -1,0 +1,5 @@
+[workspace]
+members = [
+    "src/day_05_Todo_backend"
+]
+resolver = "2"

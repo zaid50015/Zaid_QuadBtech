@@ -1,0 +1,18 @@
+type VoteError = variant {
+    Unauthorized;
+    AlreadyVoted;
+    InvalidCandidate;
+    InternalError: text;
+};
+
+type Candidate = record {
+    id: nat32;
+    name: text;
+    vote_count: nat32;
+};
+
+service : {
+    "vote": (nat32) -> (variant { ok; err: VoteError });
+    "get_results": () -> (vec Candidate) query;
+    "has_voted": (principal) -> (bool) query;
+}

@@ -1,0 +1,38 @@
+{
+  "canisters": {
+    "day_04_voting_backend": {
+      "candid": "src/day_04_voting_backend/day_04_voting_backend.did",
+      "package": "day_04_voting_backend",
+      "type": "rust"
+    },
+    "day_04_voting_frontend": {
+      "dependencies": [
+        "day_04_voting_backend"
+      ],
+      "source": [
+        "src/day_04_voting_frontend/dist"
+      ],
+      "type": "assets",
+      "workspace": "day_04_voting_frontend"
+    },
+    "internet_identity": {
+      "candid": "https://github.com/dfinity/internet-identity/releases/latest/download/internet_identity.did",
+      "frontend": {},
+      "remote": {
+        "id": {
+          "ic": "rdmx6-jaaaa-aaaaa-aaadq-cai"
+        }
+      },
+      "type": "custom",
+      "wasm": "https://github.com/dfinity/internet-identity/releases/latest/download/internet_identity_dev.wasm.gz"
+    }
+  },
+  "defaults": {
+    "build": {
+      "args": "",
+      "packtool": ""
+    }
+  },
+  "output_env_file": ".env",
+  "version": 1
+}

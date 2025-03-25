@@ -1,0 +1,54 @@
+type Task = record {
+    id : nat64;
+    title : text;
+    description : text;
+    completed : bool;
+};
+
+type AddTaskResult = variant {
+    Ok : nat64;
+    Err : text;
+};
+
+type RemoveTaskResult = variant {
+    Ok : bool;
+    Err : text;
+};
+
+type ToggleTaskResult = variant {
+    Ok : bool;
+    Err : text;
+};
+
+type ListTasksResult = variant {
+    Ok : vec Task;
+    Err : text;
+};
+
+type GetTaskResult = variant {
+    Ok : opt Task;
+    Err : text;
+};
+
+type AssignTaskResult = variant {
+    Ok : nat64;
+    Err : text;
+};
+
+type ListUsersResult = variant {
+    Ok : vec principal;
+    Err : text;
+};
+
+service : {
+    "create_account" : (text, text) -> (bool);
+    "login" : (text, text) -> (bool) query;
+    "add_task" : (text, text) -> (AddTaskResult);
+    "remove_task" : (nat64) -> (RemoveTaskResult);
+    "toggle_task" : (nat64) -> (ToggleTaskResult);
+    "list_tasks" : () -> (ListTasksResult) query;
+    "get_task" : (nat64) -> (GetTaskResult) query;
+    "assign_task_to_user" : (principal, text, text) -> (AssignTaskResult);
+    "list_users" : () -> (ListUsersResult) query;
+    "init":()->();
+};

@@ -1,0 +1,5 @@
+[workspace]
+members = [
+    "src/day_04_voting_backend"
+]
+resolver = "2"
