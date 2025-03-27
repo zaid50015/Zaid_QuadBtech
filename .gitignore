@@ -23,3 +23,13 @@ dist/
 
 # environment variables
 .env
+
+
+#Solana files
+.anchor
+.DS_Store
+target
+**/*.rs.bk
+node_modules
+test-ledger
+.yarn
