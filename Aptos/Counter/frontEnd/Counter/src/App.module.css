@@ -1,0 +1,135 @@
+.container {
+  display: flex;
+  height: 100vh;
+  width: 100%;
+  align-items: center;
+  justify-content: center;
+  background: linear-gradient(to bottom right, #000000, #1a1a2e);
+  font-family: "Arial", sans-serif;
+}
+
+.counterWrapper {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 3rem;
+  border-radius: 1rem;
+  background-color: rgba(0, 0, 0, 0.4);
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.glowEffect {
+  position: absolute;
+  inset: -1px;
+  background: linear-gradient(to right, #00ffff, #ff00ff);
+  border-radius: 1rem;
+  filter: blur(15px);
+  opacity: 0.2;
+  z-index: -1;
+}
+
+.counterDisplay {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 10rem;
+  height: 10rem;
+  margin-bottom: 2rem;
+  border-radius: 50%;
+  background-color: rgba(0, 0, 0, 0.6);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  overflow: hidden;
+}
+
+.counterValue {
+  font-size: 4rem;
+  font-weight: bold;
+  color: #ffffff;
+  text-shadow: 0 0 10px rgba(255, 255, 255, 0.5);
+}
+
+.buttonGroup {
+  display: flex;
+  gap: 1rem;
+}
+
+.button {
+  width: 3.5rem;
+  height: 3.5rem;
+  border-radius: 50%;
+  border: none;
+  background-color: rgba(0, 0, 0, 0.6);
+  color: #ffffff;
+  font-size: 1.5rem;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.button:hover {
+  transform: scale(1.1);
+}
+
+.button:active {
+  transform: scale(0.95);
+}
+
+.decrementButton {
+  border: 1px solid rgba(0, 255, 255, 0.3);
+  color: #00ffff;
+}
+
+.decrementButton:hover {
+  background-color: rgba(0, 255, 255, 0.1);
+}
+
+.resetButton {
+  border: 1px solid rgba(255, 0, 255, 0.3);
+  color: #ff00ff;
+}
+
+.resetButton:hover {
+  background-color: rgba(255, 0, 255, 0.1);
+}
+
+.incrementButton {
+  border: 1px solid rgba(0, 255, 255, 0.3);
+  color: #00ffff;
+}
+
+.incrementButton:hover {
+  background-color: rgba(0, 255, 255, 0.1);
+}
+
+@keyframes glow {
+  0% {
+    box-shadow: 0 0 5px rgba(0, 255, 255, 0.5), 0 0 10px rgba(255, 0, 255, 0.5);
+  }
+  50% {
+    box-shadow: 0 0 20px rgba(0, 255, 255, 0.5), 0 0 30px rgba(255, 0, 255, 0.5);
+  }
+  100% {
+    box-shadow: 0 0 5px rgba(0, 255, 255, 0.5), 0 0 10px rgba(255, 0, 255, 0.5);
+  }
+}
+
+.counterDisplay::after {
+  content: "";
+  position: absolute;
+  top: -50%;
+  left: -50%;
+  width: 200%;
+  height: 200%;
+  background: conic-gradient(transparent, rgba(0, 255, 255, 0.3), transparent 30%);
+  animation: rotate 4s linear infinite;
+}
+
+@keyframes rotate {
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
