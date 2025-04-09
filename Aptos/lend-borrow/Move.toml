@@ -1,0 +1,16 @@
+[package]
+name = "lend_borrow"
+version = "1.0.0"
+authors = []
+
+[addresses]
+lend_borrow_blockchain = "51d4b02e3b3f4335d843145e959bf7f5a8349b1bfc60997701ee20c940a1aadc"
+
+[dev-addresses]
+
+[dependencies.AptosFramework]
+git = "https://github.com/aptos-labs/aptos-framework.git"
+rev = "mainnet"
+subdir = "aptos-framework"
+
+[dev-dependencies]
