@@ -1,0 +1,12 @@
+[package]
+name = "MessageBoard"
+version = "1.0.0"
+authors = []
+
+[addresses]
+gas_refund_demo = "0x1f219f1b94e162e5a3298a70594c90009c33b95cfc6f24378083d9138e391f0a"
+
+[dependencies]
+AptosFramework = { git = "https://github.com/aptos-labs/aptos-core.git", rev = "mainnet", subdir = "aptos-move/framework/aptos-framework" }
+
+[dev-dependencies]
